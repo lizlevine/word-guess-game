@@ -1,0 +1,9 @@
+h1,
+h2 {
+  text-align: center;
+  background-color: lightblue;
+  color: lightcoral;
+  height: 40px;
+  width: 100%;
+  padding-top: 20px;
+}
