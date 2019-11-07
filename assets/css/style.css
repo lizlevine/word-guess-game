@@ -1,9 +1,18 @@
 h1,
-h2 {
+h2,
+h3 {
   text-align: center;
   background-color: lightblue;
   color: lightcoral;
   height: 40px;
   width: 100%;
   padding-top: 20px;
+  margin-bottom: 20px;
+}
+p {
+  text-align: center;
+  line-height: 1.5;
+}
+body {
+  background-image: url("assets/images/leopard-print.jpg");
 }
