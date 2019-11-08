@@ -1,8 +1,9 @@
-• create an array of animals trigger a function
+• create an array of animals that trigger a function
+• create some random .math method to randomly extract animal names from the array randomly
+• write something that will display _ _ _ _  same number of underscores as word randomly    picked by comp / create something to display maybe h1
 • Use key events to listen for letters (onkeyup) and tie a function to it
 • Display keys pressed (display)
-• create some random method to randomly extract animal names from the array
-• write something that will display _ _ _ _  same number of underscores as word randomly picked by comp
+
 • create a letter counter function and display which shows how many guesses remaining
 • create a function that will count wins (number of times user guessed the word correctly)
 • create a function that displays the users correct guesses and reveal them on the broken line
