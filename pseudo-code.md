@@ -1,14 +1,13 @@
 • create an array of animals that trigger a function
 • create some random .math method to randomly extract animal names from the array randomly
 • write something that will display _ _ _ _  same number of underscores as word randomly    picked by comp / create something to display maybe h1
-• Use key events to listen for letters (onkeyup) and tie a function to it
+• Listen for onkeyup event and tie a function 
 • Display keys pressed (display)
-
+• Remember to use property/method/ etc. to include lowerCase letters
 • create a letter counter function and display which shows how many guesses remaining
 • create a function that will count wins (number of times user guessed the word correctly)
-• create a function that displays the users correct guesses and reveal them on the broken line
+• create a function that displays the users correct guesses and reveal them on the          underscored line
 • a function that generates the next word to be guessed
-
 
 
 Option Two: Word Guess Game (Challenge - Recommended)
