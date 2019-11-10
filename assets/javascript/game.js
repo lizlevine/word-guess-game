@@ -1,8 +1,10 @@
+var beginGame = document.getElementById;
 var userChoiceText = document.getElementById("userchoice-text");
 var computerChoiceText = document.getElementById("computerchoice-text");
 var winsText = document.getElementById("wins-text");
 var lossesText = document.getElementById("losses-text");
 var underscoresContainer = document.getElementById("underscores");
+// var userGuess = document.getElementById("user-guess")["0"].value;
 
 var animalArray = [
   "cheetah",
@@ -13,8 +15,18 @@ var animalArray = [
   "gazelle",
   "lion",
   "rhino",
-  "buffalo"
+  "buffalo",
+  "meerkat"
 ];
+
+// Stats:
+var wins = 0;
+var losses = 0;
+var allowedGuesses = 7;
+
+function beginGame() {
+  allowedGuesses = 7;
+}
 
 // var choice = math.floor(math.random() * animals.length);
 

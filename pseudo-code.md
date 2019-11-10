@@ -1,12 +1,15 @@
 • create an array of animals that trigger a function
-• create some random .math method to randomly extract animal names from the array randomly
-• write something that will display _ _ _ _  same number of underscores as word randomly    picked by comp / create something to display maybe h1
-• Listen for onkeyup event and tie a function 
-• Display keys pressed (display)
+• create a random .math method function to randomly select animal names from the array 
+• build a function that will hook into an element (span) to display _ _ _ _  (with same     
+number of underscores as animal name
+• Listen for onkeyup event and tie a function to begin game and generate a random name      
+that displays correct number of underscores
+• Create function that calculates number of guesses remainingDisplay keys pressed (display)
 • Remember to use property/method/ etc. to include lowerCase letters
 • create a letter counter function and display which shows how many guesses remaining
 • create a function that will count wins (number of times user guessed the word correctly)
-• create a function that displays the users correct guesses and reveal them on the          underscored line
+• create a function that displays the users correct guesses and reveal them on the          
+underscored line
 • a function that generates the next word to be guessed
 
 
@@ -38,7 +41,7 @@ Letters Already Guessed: (Letters the user has guessed, displayed like L Z Y H).
 
 After the user wins/loses the game should automatically choose another word and make the user play it.
 
-Word Guess Game Bonuses
+*** Word Guess Game Bonuses ***
 
 Play a sound or song when the user guesses their word correctly, like in our demo.
 Write some stylish CSS rules to make a design that fits your game's theme.
@@ -55,7 +58,7 @@ Definitely talk with a TA or your instructor if you get tripped up during this c
 ** A Few Tips **
 
 
-IMPORTANT: Whichever assignment you choose, code your game one piece at a time! Code all of your apps one piece at a time. Always code one piece at a time!
+*** IMPORTANT: Whichever assignment you choose, code your game one piece at a time! Code all of your apps one piece at a time. Always code one piece at a time!**
 
 
 Pseudocode your program and break the app down into tiny, manageable fragments. This will make the coding process much less frustrating and a veritable Mach number faster. Otherwise, you'll be chipping away at a giant chunk of abstraction for way too many hours.
@@ -63,12 +66,9 @@ Pseudocode your program and break the app down into tiny, manageable fragments. 
 The ability to solve a large problem by treating it as a set of smaller ones is the hallmark of a strong programmer. Best start adapting this into your development routine now, to better prepare for your more complex future projects.
 Remember:
 
-Split the whole program into many distinct, pseudocoded problems.
+*** Split the whole program into many distinct, pseudocoded problems.
 Focus on one of the smaller problems and solve it.
 Only when you solve one problem should you then move onto your next problem.
-
-
-
 
 
 When you encounter bugs (and we all do), console.log will become your best friend. Regularly check your console to make sure your app is spitting out the right values.

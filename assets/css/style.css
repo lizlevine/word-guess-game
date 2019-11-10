@@ -1,3 +1,8 @@
+body {
+  font-family: "Julius Sans One", sans-serif;
+  font-weight: 900;
+  line-height: 1.25;
+}
 h1,
 h2 {
   text-align: center;
@@ -6,7 +11,7 @@ h2 {
   text-emphasis: weigh;
   height: 60px;
   width: 100%;
-  padding-top: 40px;
+  padding-top: 30px;
   margin-bottom: 20px;
 }
 p,
