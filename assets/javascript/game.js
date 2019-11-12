@@ -80,23 +80,41 @@ function addUnderscores(chosenWord) {
   // refresh after every game
   var remainingGuesses = 0;
   var guessesAllowed = 11;
+  var letterChoice = [];
   var wrongGuesses = [];
   var blanksAndLetters = [];
 
   // below are methods to update html
 
-  document.getElementById("guessed-so-far").innerHTML = blanksAndFilledSpaces;
-  document.getElementById;
-  document.getElementById;
-  document.getElementById;
-  document.getElementById;
+  // document.getElementById("guessed-so-far").innerHTML = blanksAndFilledSpaces;
+  // document.getElementById;
+  // document.getElementById;
+  // document.getElementById;
+  // document.getElementById;
 
   console.log(chosenWord);
   console.log(underscores);
   return underscores;
 }
 
+// addUnderscores(chosenAnimal);
+
+// below changes HTML to reflect updates during game
+// document.getElementById("guess-this-word").innerHTML = blanksAndLetters.join(
+//   " "
+// );
+document.getElementById("guesses-remaining").innerHTML = remainingGuesses;
+document.getElementById("wins-total").innerHTML = wins;
+document.getElementById("losses-total").innerHTML = losses;
+
 addUnderscores(chosenAnimal);
+
+// following function tracks keyclicks
+
+document.onkeyup = function(event) {
+  var letterChoice = String.fromCharCode(event.keyCode).toLowerCase();
+  alert(letterChoice);
+};
 
 /**
  * Each span above is just a span with underscore
