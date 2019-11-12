@@ -48,17 +48,6 @@ function beginGame(array) {
   blanks = lettersOfWord.length;
 }
 
-// function beginGame() {
-//   chosenAnimal = animalArray[Math.floor(Math.random() * Animalarray.length)];
-//   lettersOfWord = chosenAnimal.split("");
-// }
-
-// .random is the method.. whenever a funciton is inside an object we call it Math. object
-// return - function as a funnel... multiple inputs that can go into it and manipulate those
-// imputs and return one thing at the end. Return keyword allows you when you call to store
-// the output inside of a new variable - functions written in lowercase/camel case.
-// events (see)
-
 var chosenAnimal = beginGame(animalArray);
 
 // beginGame();
@@ -84,37 +73,56 @@ function addUnderscores(chosenWord) {
   var wrongGuesses = [];
   var blanksAndLetters = [];
 
-  // below are methods to update html
-
-  // document.getElementById("guessed-so-far").innerHTML = blanksAndFilledSpaces;
-  // document.getElementById;
-  // document.getElementById;
-  // document.getElementById;
-  // document.getElementById;
-
   console.log(chosenWord);
   console.log(underscores);
   return underscores;
 }
 
-// addUnderscores(chosenAnimal);
+document.onkeyup = function(event) {
+  var letterChoice = String.fromCharCode(event.keyCode).toLowerCase();
+  letterChoiceCompare(letterChoice);
+  alert(letterChoice);
+};
 
-// below changes HTML to reflect updates during game
-// document.getElementById("guess-this-word").innerHTML = blanksAndLetters.join(
-//   " "
-// );
-document.getElementById("guesses-remaining").innerHTML = remainingGuesses;
+// document.getElementById("guessed-so-far").innerHTML = blanksAndFilledSpaces;
+// document.getElementById("guesses-remaining").innerHTML = remainingGuesses;
+document.getElementById("guesses-allowed").innerHTML = guessesAllowed;
 document.getElementById("wins-total").innerHTML = wins;
 document.getElementById("losses-total").innerHTML = losses;
 
 addUnderscores(chosenAnimal);
 
+// as soon as I add the code below, the underscores disappear, so I tried adding code above to bottom instead - didn't work
+
+function letterChoiceCompare(letter) {
+  // this function determines if letter choice exists in the animal word
+  var letterExists = false;
+  for (var i = 0; i < blanks; i++) {
+    if (chosenAnimal[i] === letter) {
+      letterExists = true;
+      alert(letterExists);
+    }
+  }
+}
+if (letterExists) {
+  for (var i = 0; i < blanks; i++) {
+    if (chosenAnimal[i] === letter) {
+      blanksAndLetters[i] = letter;
+    }
+  }
+} else {
+  wrongGuesses.push(letter);
+  remainingGuesses--;
+}
+
+// addUnderscores(chosenAnimal);
+
 // following function tracks keyclicks
 
-document.onkeyup = function(event) {
-  var letterChoice = String.fromCharCode(event.keyCode).toLowerCase();
-  alert(letterChoice);
-};
+// document.onkeyup = function(event) {
+//   var letterChoice = String.fromCharCode(event.keyCode).toLowerCase();
+//   letterChoiceCompare(letterChoice);
+// };
 
 /**
  * Each span above is just a span with underscore
@@ -123,52 +131,3 @@ document.onkeyup = function(event) {
  * How will you select the correct span to replace with the letter upon a correct guess?
  *
  */
-
-//   // This function is run whenever the user presses a key.
-//   document.onkeyup = function(event) {
-
-//     // Determines which key was pressed.
-//     var userGuess = event.key;
-
-// for (var i = 0; i < chosenWord.length; i++) {
-//     underscores.push("_");
-
-// Meri's code (modified) below (aboce console.log);
-
-// display[i] = "_ ";
-// output = output + display[i];
-
-// write onkeyup event to begin game and then write inner.html to print underscores
-// this was taken from r,p,s, exercise
-
-// This function is run whenever the user presses a key.
-//   document.onkeyup = function(event) {
-
-// Determines which key was pressed.
-// var userGuess = event.key;
-
-// this is what michael used in his DOM manip exercise with the boxes;
-
-// for (var i = 0; i < boxElements.length; i++) {
-//     boxElements[i].innerHTML = `<h1>${i + 1}</h1>`;
-//   }
-
-// var setup = function() {
-//   for (var i = 0; i < array.length; i++) {
-//     display[i] = "_ ";
-//     output = output + display[i];
-//   }
-//   document.getElementById("animalArray").innerHTML = output;
-//   output = "";
-// };
-// if we have all the correct letters...
-
-if (currentLetters.toString() === blanksAndFilledSpaces.toString()) {
-  wins++;
-  document.getElementById("");
-}
-
-document.getElementById("beginGame").onclick = function() {
-  buttons();
-};
-beginGame();

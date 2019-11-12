@@ -4,6 +4,25 @@
 number of underscores as animal name
 • Listen for onkeyup event and tie a function to begin game and generate a random name      
 that displays correct number of underscores
+• build if/else if/else conditional statements that will enable comparison of user guess against random word chosen
+
+ex) if key pressed && it exist in random word 
+THEN print that letter in the appropriate spae
+
+else number of choices goes down by one (use getElementById to update HTML)
+
+IF all underscores are filled 
+
+THEN alert "you win!" and increment wins by 1 (use getElementById to update HTML), and reset the game
+
+ELSE IF user runs out of guesses
+
+THEN increment losses by 1
+
+ELSE, decrement number of remaining guesses by 1
+)
+
+
 • Create function that calculates number of guesses remainingDisplay keys pressed (display)
 • Remember to use property/method/ etc. to include lowerCase letters
 • create a letter counter function and display which shows how many guesses remaining
@@ -11,6 +30,73 @@ that displays correct number of underscores
 • create a function that displays the users correct guesses and reveal them on the          
 underscored line
 • a function that generates the next word to be guessed
+
+
+
+
+** Below are comments/ older code moved from js file to clean things up a bit **
+_______________________________________________________________________________________________________
+
+
+// function beginGame() {
+//   chosenAnimal = animalArray[Math.floor(Math.random() * Animalarray.length)];
+//   lettersOfWord = chosenAnimal.split("");
+// }
+
+// .random is the method.. whenever a function is inside an object we call it Math. object
+// return - function as a funnel... multiple inputs that can go into it and manipulate those
+// imputs and return one thing at the end. Return keyword allows you when you call to store
+// the output inside of a new variable - functions written in lowercase/camel case.
+// events (see)
+
+//   // This function is run whenever the user presses a key.
+//   document.onkeyup = function(event) {
+
+//     // Determines which key was pressed.
+//     var userGuess = event.key;
+
+// for (var i = 0; i < chosenWord.length; i++) {
+//     underscores.push("_");
+
+// Meri's code (modified) below (aboce console.log);
+
+// display[i] = "_ ";
+// output = output + display[i];
+
+// write onkeyup event to begin game and then write inner.html to print underscores
+// this was taken from r,p,s, exercise
+
+// This function is run whenever the user presses a key.
+//   document.onkeyup = function(event) {
+
+// Determines which key was pressed.
+// var userGuess = event.key;
+
+// this is what michael used in his DOM manip exercise with the boxes;
+
+// for (var i = 0; i < boxElements.length; i++) {
+//     boxElements[i].innerHTML = `<h1>${i + 1}</h1>`;
+//   }
+
+// var setup = function() {
+//   for (var i = 0; i < array.length; i++) {
+//     display[i] = "_ ";
+//     output = output + display[i];
+//   }
+//   document.getElementById("animalArray").innerHTML = output;
+//   output = "";
+// };
+// if we have all the correct letters...
+
+// if (currentLetters.toString() === blanksAndFilledSpaces.toString()) {
+//   wins++;
+//   document.getElementById("");
+// }
+
+// document.getElementById("beginGame").onclick = function() {
+//   buttons();
+// };
+// beginGame();
 
 
 Option Two: Word Guess Game (Challenge - Recommended)
@@ -92,7 +178,6 @@ Always commit your work and back it up with GitHub pushes. You don't want to los
 Commit often.
 
 
-
 Turn in anything you have! Even if you don't finish, we still want to see what you were able to accomplish in the time we gave you. This will help us know what concepts we could help you with, as well as what topics we should focus on in the coming lectures.
 
 
@@ -110,14 +195,8 @@ Attempt to complete homework assignment as described in instructions. If unable 
 Create a README.md
 Add a README.md to your repository describing the project. Here are some resources for creating your README.md. Here are some resources to help you along the way:
 
-
 About READMEs
-
-
 Mastering Markdown
-
-
-
 
 Add To Your Portfolio
 After completing the homework please add the piece to your portfolio. Make sure to add a link to your updated portfolio in the comments section of your homework so the TAs can easily ensure you completed this step when they are grading the assignment. To receive an 'A' on any assignment, you must link to it from your portfolio.
