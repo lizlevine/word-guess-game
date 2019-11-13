@@ -31,7 +31,7 @@ var wrongGuesses = [];
 // possible outcomes
 var wins = 0;
 var losses = 0;
-var remainingGuesses = 0;
+var remainingGuesses = 11;
 var guessesAllowed = 11;
 
 // function beginGame() {
@@ -43,6 +43,10 @@ var guessesAllowed = 11;
 // function to get a random word from the array/ in own ecosystem doesn't care  about above
 // when you pass in arg. array, telling function what to do with it, right now a placeholder - can call it anything
 function beginGame(array) {
+  remainingGuesses = 11;
+  wrongGuesses = [];
+  document.getElementById("guessed-so-far").innerHTML = wrongGuesses;
+  document.getElementById("guesses-remaining").innerHTML = remainingGuesses;
   return array[Math.floor(Math.random() * array.length)];
   lettersOfWord = chosenAnimal.split("");
   blanks = lettersOfWord.length;
@@ -50,79 +54,102 @@ function beginGame(array) {
 
 var chosenAnimal = beginGame(animalArray);
 
+// begin Game function call broke the site
 // beginGame();
 
-// could console log and see an animal name
 // return is usually the last line - no code after return line will run
+
+// below function/for loop (lines 61-69)was written with the help of T.A.
 
 function addUnderscores(chosenWord) {
   console.log();
   var wordLength = chosenWord.length;
   var underscores = "_";
 
-  for (var i = 0; i < chosenWord.length; i++) {
-    var span = document.createElement("span");
-    span.innerHTML = "_ ";
-    underscoresContainer.appendChild(span);
-  }
+  // for (var i = 0; i < chosenWord.length; i++) {
+  //   var span = document.createElement("span");
+  //   span.innerHTML = "_ ";
+  //   underscoresContainer.appendChild(span);
+  // }
 
   // refresh after every game
-  var remainingGuesses = 0;
+  var remainingGuesses = 11;
   var guessesAllowed = 11;
   var letterChoice = [];
   var wrongGuesses = [];
-  var blanksAndLetters = [];
+
+  // fill in blanks and letters (question as to whether necessary given code on line 58-66)
+
+  for (var i = 0; i < chosenWord.length; i++) {
+    blanksAndLetters.push("_");
+  }
+  underscores = blanksAndLetters.join(" ");
+  underscoresContainer.innerHTML = underscores;
+
+  // testing in console
 
   console.log(chosenWord);
   console.log(underscores);
+  console.log(lettersOfWord);
   return underscores;
 }
+
+// this function tracks user key clicks
 
 document.onkeyup = function(event) {
   var letterChoice = String.fromCharCode(event.keyCode).toLowerCase();
   letterChoiceCompare(letterChoice);
-  alert(letterChoice);
+  // alert(letterChoice);
 };
 
+// below will update game status to the HTML - first commented out will negate the spaces for some reason
+
 // document.getElementById("guessed-so-far").innerHTML = blanksAndFilledSpaces;
-// document.getElementById("guesses-remaining").innerHTML = remainingGuesses;
+
 document.getElementById("guesses-allowed").innerHTML = guessesAllowed;
-document.getElementById("wins-total").innerHTML = wins;
-document.getElementById("losses-total").innerHTML = losses;
 
 addUnderscores(chosenAnimal);
 
-// as soon as I add the code below, the underscores disappear, so I tried adding code above to bottom instead - didn't work
-
 function letterChoiceCompare(letter) {
-  // this function determines if letter choice exists in the animal word
+  // this function determines if letter choice exists in the animal word- default setting to fault - expecting it not to exist in word
   var letterExists = false;
-  for (var i = 0; i < blanks; i++) {
+  for (var i = 0; i < chosenAnimal.length; i++) {
     if (chosenAnimal[i] === letter) {
       letterExists = true;
-      alert(letterExists);
+      // alert(letterExists);
+    }
+  }
+
+  if (letterExists) {
+    for (var i = 0; i < blanksAndLetters.length; i++) {
+      if (chosenAnimal[i] === letter) {
+        blanksAndLetters[i] = letter;
+
+        underscores = blanksAndLetters.join(" ");
+        underscoresContainer.innerHTML = underscores;
+        if (blanksAndLetters.join("") === chosenAnimal) {
+          alert("Congrats, you won!");
+          wins++;
+          document.getElementById("wins-total").innerHTML = wins;
+
+          chosenAnimal = beginGame(animalArray);
+        }
+      }
+    }
+  } else {
+    wrongGuesses.push(letter);
+    document.getElementById("guessed-so-far").innerHTML = wrongGuesses;
+    remainingGuesses--;
+    document.getElementById("guesses-remaining").innerHTML = remainingGuesses;
+    if (remainingGuesses === 0) {
+      alert("you lost! Try again!");
+      losses++;
+      document.getElementById("losses-total").innerHTML = losses;
+
+      chosenAnimal = beginGame(animalArray);
     }
   }
 }
-if (letterExists) {
-  for (var i = 0; i < blanks; i++) {
-    if (chosenAnimal[i] === letter) {
-      blanksAndLetters[i] = letter;
-    }
-  }
-} else {
-  wrongGuesses.push(letter);
-  remainingGuesses--;
-}
-
-// addUnderscores(chosenAnimal);
-
-// following function tracks keyclicks
-
-// document.onkeyup = function(event) {
-//   var letterChoice = String.fromCharCode(event.keyCode).toLowerCase();
-//   letterChoiceCompare(letterChoice);
-// };
 
 /**
  * Each span above is just a span with underscore
