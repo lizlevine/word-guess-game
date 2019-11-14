@@ -59,7 +59,7 @@ var chosenAnimal = beginGame(animalArray);
 
 // return is usually the last line - no code after return line will run
 
-// below function/for loop (lines 61-69)was written with the help of T.A.
+// original function/for loop (commented lines 69-73 )written with the help of T.A.'s -
 
 function addUnderscores(chosenWord) {
   console.log();
@@ -102,7 +102,7 @@ document.onkeyup = function(event) {
   // alert(letterChoice);
 };
 
-// below will update game status to the HTML - first commented out will negate the spaces for some reason
+// below will update game status to the HTML
 
 // document.getElementById("guessed-so-far").innerHTML = blanksAndFilledSpaces;
 
@@ -132,7 +132,8 @@ function letterChoiceCompare(letter) {
           wins++;
           document.getElementById("wins-total").innerHTML = wins;
 
-          chosenAnimal = beginGame(animalArray);
+          // chosenAnimal = beginGame(animalArray);
+          beginGame();
         }
       }
     }
@@ -148,7 +149,8 @@ function letterChoiceCompare(letter) {
       losses++;
       document.getElementById("losses-total").innerHTML = losses;
 
-      chosenAnimal = beginGame(animalArray);
+      // chosenAnimal = beginGame(animalArray);
+      beginGame();
     }
   }
 }
