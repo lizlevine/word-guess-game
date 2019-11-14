@@ -128,7 +128,7 @@ function letterChoiceCompare(letter) {
         underscores = blanksAndLetters.join(" ");
         underscoresContainer.innerHTML = underscores;
         if (blanksAndLetters.join("") === chosenAnimal) {
-          alert("Congrats, you won!");
+          alert("Congratulations, you won!!");
           wins++;
           document.getElementById("wins-total").innerHTML = wins;
 
@@ -142,7 +142,9 @@ function letterChoiceCompare(letter) {
     remainingGuesses--;
     document.getElementById("guesses-remaining").innerHTML = remainingGuesses;
     if (remainingGuesses === 0) {
-      alert("you lost! Try again!");
+      alert(
+        "You lost this round... no worries, refresh the page and try again!"
+      );
       losses++;
       document.getElementById("losses-total").innerHTML = losses;
 

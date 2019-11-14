@@ -5,6 +5,7 @@ number of underscores as animal name
 • Listen for onkeyup event and tie a function to begin game and generate a random name      
 that displays correct number of underscores
 • build if/else if/else conditional statements that will enable comparison of user guess against random word chosen
+• BE MINDFUL OF OVER WRITING VARIABLES - USE LONGHAND WHEN NAMING VARS AND FCTS, DON'T OVER "MINIFY"
 
 ex) if key pressed && it exist in random word 
 THEN print that letter in the appropriate spae
